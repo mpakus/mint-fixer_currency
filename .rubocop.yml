@@ -1,0 +1,9 @@
+Metrics/LineLength:
+  Max: 120
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+#Metrics/MethodLength:
+#  Enabled: false
+#Metrics/ModuleLength:
+#  Enabled: false
+#
