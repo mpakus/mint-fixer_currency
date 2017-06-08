@@ -1,7 +1,10 @@
 require 'mint/fixer_currency/version'
 
 module Mint
+  # Access to foreign exchange rates from Fixer.io
   module FixerCurrency
-    # Your code goes here...
+    def self.rates(_currency = :USD, _date = nil)
+      {}
+    end
   end
 end

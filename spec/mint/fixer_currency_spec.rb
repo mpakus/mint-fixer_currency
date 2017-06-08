@@ -1,11 +1,10 @@
 require 'spec_helper'
 
 RSpec.describe Mint::FixerCurrency do
-  it 'has a version number' do
-    expect(Mint::FixerCurrency::VERSION).not_to be nil
-  end
+  it { expect(Mint::FixerCurrency::VERSION).not_to be nil }
 
-  it 'does something useful' do
-    expect(false).to eq(true)
-  end
+  it { expect(Mint::FixerCurrency.rates(:USD)).to be_kind_of Hash }
+  it { expect(Mint::FixerCurrency.rates(:USD, '2016-03-01')).to be_kind_of Hash }
+
+  it { expect { Mint::FixerCurrency.rates(:BTC) }.to raise_error Mint::WrongCurrencyError }
 end

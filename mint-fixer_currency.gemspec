@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Renat Ibragimov']
   spec.email         = ['mrak69@gmail.com']
 
-  spec.summary       = 'Mint::FixerCurrency gem gives you access for foreign exchange rates from Fixer.io'
+  spec.summary       = 'Mint::FixerCurrency gem gives you access to foreign exchange rates from Fixer.io'
   spec.description   = 'Current and historical foreign exchange rates published by the European Central Bank'
   spec.homepage      = 'https://github.com/mpakus/mint-fixer_currency'
   spec.license       = 'MIT'
