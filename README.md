@@ -2,6 +2,8 @@
 
 Gem gives you current and historical foreign exchange rates published by the European Central Bank with http://fixer.io helps.
 
+This gem can be helpful used with Mint::Money https://rubygems.org/gems/mint-money for full exchange process.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -24,13 +26,14 @@ Or install it yourself as:
 require 'mint/fixer_currency'
 
 Mint::FixerCurrency.rates
+ => {:AUD=>1.3234, :BGN=>1.7436, :BRL=>3.2713, :CAD=>1.3448, :CHF=>0.96666, :CNY=>6.798, :CZK=>23.461, :DKK=>6.6316, :GBP=>0.77479, :HKD=>7.7937, :HRK=>6.6023, :HUF=>275.17, :IDR=>13301.0, :ILS=>3.5457, :INR=>64.347, :JPY=>109.46, :KRW=>1124.5, :MXN=>18.221, :MYR=>4.2605, :NOK=>8.4713, :NZD=>1.3907, :PHP=>49.544, :PLN=>3.7366, :RON=>4.0744, :RUB=>56.624, :SEK=>8.7325, :SGD=>1.3817, :THB=>34.025, :TRY=>3.5435, :ZAR=>12.865, :EUR=>0.8915}
 Mint::FixerCurrency.rates(currency, [date])
 Mint::FixerCurrency.rates(:USD)
 Mint::FixerCurrency.rates(:USD, '2016-03-05')
 ```
 
-- `currency` (optional) by default :USD, but you can use any of the list :USD, :EUR, :AUD, :RUB...:THB
-- `date` (optional) current date by default but you can get the historical currencies from 1999
+- `currency` (optional) :USD is by default and you can use any of the list :USD, :EUR, :AUD, :RUB...:THB
+- `date` (optional) YYYY-MM-DD, current date is by default but you can get any historical currencies from 1999
 
 ## Development
 
@@ -41,7 +44,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mpakus/mint-fixer_currency. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 
 ## License
 

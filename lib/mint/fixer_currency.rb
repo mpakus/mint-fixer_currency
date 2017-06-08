@@ -1,5 +1,6 @@
 require 'mint/fixer_currency/version'
 require 'mint/fixer_currency/exceptions'
+require 'mint/fixer_currency/request'
 
 module Mint
   # Access to foreign exchange rates from Fixer.io
@@ -12,10 +13,10 @@ module Mint
     # @param currency [Symbol, String] based currency
     # @param date [String] YYYY-MM-DD optional date or latest by default
     # @return [Hash]
-    def self.rates(currency = :USD, _date = nil)
+    def self.rates(currency = :USD, date = nil)
       currency = currency.to_s.upcase.to_sym
       raise(WrongCurrencyError, currency) unless currencies.include? currency
-      {}
+      Request.new(currency, date).perform!
     end
 
     # List of available currencies
