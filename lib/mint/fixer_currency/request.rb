@@ -4,7 +4,6 @@ require_relative './exceptions'
 
 module Mint
   module FixerCurrency
-
     # Fetch exchange rates from http://fixer.io
     class Request
       def initialize(currency, date = nil)
@@ -34,7 +33,7 @@ module Mint
         json = JSON.parse(body)
         error = json.fetch('error', nil)
         raise FixerArgumentError, error if error
-        Hash[json.fetch('rates', nil).map{ |k, v| [k.to_sym, v] }]
+        Hash[json.fetch('rates', nil).map { |k, v| [k.to_sym, v] }]
       end
     end
   end
